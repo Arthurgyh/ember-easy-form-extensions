@@ -47,6 +47,7 @@ export function initialize(/* container, app */) {
       */
 
       didTransition: function() {
+	if(!!this.get('controller').trigger)
         this.get('controller').trigger('routeDidTransition');
 
         return true; // So action bubbles
@@ -62,6 +63,7 @@ export function initialize(/* container, app */) {
       */
 
       willTransition: function() {
+	if(!!this.get('controller').trigger)
         this.get('controller').trigger('routeWillTransition');
 
         return true; // So action bubbles
